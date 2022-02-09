@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+    redis:
+        image: redstonewizard/redis
+        networks:
+            - opendocs-net
+    mongo:
+        image: mongo
+        networks:
+            - opendocs-net
+    opendocs:
+        image: ghcr.io/opendocs-editor/docker:main
+        networks:
+            - opendocs-net
+        ports:
+            - 4500:4500
+        environment:
+            MONGODB_URI: mongodb://mongo:27017
+            REDIS_URI: redis://redis:6379
+
+networks:
+    opendocs-net:
