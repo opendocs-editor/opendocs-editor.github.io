@@ -1,0 +1,21 @@
+{
+    "name": "opendocs-documentation",
+    "version": "1.3.0",
+    "description": "Documentation for OpenDocs.",
+    "main": "index.js",
+    "repository": "https://github.com/opendocs-editor/docs.git",
+    "author": "Jacob Sapoznikow <jacob1coder@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "docsify-cli": "^4.4.3"
+    },
+    "packageManager": "yarn@3.1.1",
+    "scripts": {
+        "format": "prettier --write .",
+        "dev": "docsify serve -p 8086 .",
+        "start": "yarn dev"
+    },
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
+}
