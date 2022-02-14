@@ -11,7 +11,7 @@ Authlib was originally created for the [`OpenDocs Editor`](https://github.com/op
 
 <!-- tabs:start -->
 
-#### **Yarn**
+#### **Yarn (reccommended)**
 
 1. Create a project with `yarn init`.
 2. Migrate to Yarn 3 with `yarn set version berry`. Then run `yarn install` again.
@@ -22,7 +22,7 @@ Authlib was originally created for the [`OpenDocs Editor`](https://github.com/op
 npmScopes:
     opendocs-editor:
         npmRegistryServer: https://npm.pkg.github.com
- ~
+
 npmRegistries:
     //npm.pkg.github.com:
         npmAuthToken: MY_GITHUB_PERSONAL_ACCESS_TOKEN
@@ -52,10 +52,6 @@ const useAuth = require("@opendocs-editor/authlib");
 // after defining the port, initialize authlib
 useAuth(app, "authlib_dev");
 ```
-
-#### **pnPM**
-
-This is not supported yet. Try using `npm` or `yarn` instead.
 
 #### **NPM**
 
@@ -92,5 +88,9 @@ const useAuth = require("@opendocs-editor/authlib");
 // after defining the port, initialize authlib
 useAuth(app, "authlib_dev");
 ```
+
+#### **pnPM**
+
+This is not supported yet. Try using `npm` or `yarn` instead.
 
 <!-- tabs:end -->

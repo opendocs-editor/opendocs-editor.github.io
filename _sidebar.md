@@ -1,4 +1,4 @@
--   [OpenDocs](/)
+-   [OpenDocs](/ "OpenDocs Documentation")
 -   [Authlib Docs](#)
-    -   [Authlib](/authlib/index.md "Authlib | Home")
-    -   [API](/authlib/api.md "Authlib | API")
+    -   [Authlib](/authlib/index.md "Authlib Docs")
+    -   [API](/authlib/api.md "Authlib Docs - API")

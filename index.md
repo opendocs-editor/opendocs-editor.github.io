@@ -1,6 +1,6 @@
 # OpenDocs
 
-### A WYSIWYG editor like Google Docs that supports Dyslexia, and as a bonus, custom fonts.
+#### A WYSIWYG editor like Google Docs that supports Dyslexia, and as a bonus, custom fonts.
 
 ---
 
@@ -12,22 +12,26 @@ Table of Contents
 
 ---
 
-## About
+### About
 
 OpenDocs is a 100% open-source editor like Word and Google Docs that aims to support people with Dyslexia.\
 It does this through the availibility of custom fonts and typefaces to make readibility easier.\
 OpenDocs will allow people to collaborate in real-time, as well as providing a desktop experience for PC, Mac, and Linux users.\
 OpenDocs aims to create an amazing experience for anyone, with special considerations taken into account for people with Dyslexia.\
-It will allow you to upload your own fonts, and your own pictures and assets to support your projects.
+It will allow you to upload your own fonts, pictures and assets to support your projects.
 
-## Installation
+**OpenDocs was created for the 2022 Beaverton School District STEM Expo. Please be kind, as it was created by a 7th grader.**
+
+***P.S.*** *Yes, we do accept criticism, and I can handle a lot of it. Just try to be nice. If you have any questions, comments, or suggestions, feel free to create an issue on our GitHub.*
+
+### Installation
 
 <!-- tabs:start -->
 
 #### **Cloud-Hosted**
 1. Navigate to [https://docs.nosadnile.net/](https://docs.nosadnile.net/)
 2. Create an account.
-3. Create a new document
+3. Create a new document.
 4. Have fun!
 #### **Docker**
 1. Install Docker
@@ -47,11 +51,38 @@ It will allow you to upload your own fonts, and your own pictures and assets to 
 2. Install Docker Compose
     - Debian/Ubuntu/Kali Linux
         1. Open a terminal.
-        2. Run `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`.
+        2. Run
+        ```
+        sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose.
+        ```
         3. Run `sudo chmod +x /usr/local/bin/docker-compose`.
     - MacOS/Windows
         - Docker Compose comes pre-installed with Docker Desktop. You can skip this step.
 3. Create `docker-compose.yml` with this content:
+```yaml
+version: "3.9"
+services:
+    redis:
+        image: redstonewizard/redis
+        networks:
+            - opendocs-net
+    mongo:
+        image: mongo
+        networks:
+            - opendocs-net
+    opendocs:
+        image: ghcr.io/opendocs-editor/docker:main
+        networks:
+            - opendocs-net
+        ports:
+            - 4500:4500
+        environment:
+            MONGODB_URI: mongodb://mongo:27017
+            REDIS_URI: redis://redis:6379
+ 
+networks:
+    opendocs-net:
+```
 4. Run `docker-compose up -d`
 5. Go to [http://localhost:4500](http://localhost:4500)
 #### **Self-Hosted**
@@ -129,23 +160,27 @@ It will allow you to upload your own fonts, and your own pictures and assets to 
 
 <!-- tabs:end -->
 
-## Roadmap
+### Roadmap
 
-### Checklist
+<!-- tabs:start -->
 
-- [ ] Accounts
+#### **Checklist**
+
+- [x] **~~Accounts~~**
 - [ ] Cloud storage
 - [ ] WYSIWYG Editor
 - [ ] Live collaboration
 - [ ] Live chat for collaboration
 - [ ] Comments
-- [ ] Formatting
+- [x] **~~Formatting~~**
 - [ ] Fonts
 - [ ] Cloud documents explorer
 - [ ] Export to Word, PDF, and image
 - [ ] Add-on API
 - [ ] Decentralize with Docker and Docker Compose
 
-### Diagram
+#### **Diagram**
 
-![Roadmap Diagram](https://cdn.nosadnile.net/opendocs/roadmap_diagram.png)
+![Roadmap Diagram](roadmap_diagram.png)
+
+<!-- tabs:end -->

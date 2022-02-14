@@ -1,2 +1,3 @@
--   api version
-    -   [latest (1.3.0)](/)
+-   [Website](https://docs.nosadnile.net/)
+-   [Documentation](https://opendocs-editor.github.io/)
+-   [GitHub](https://github.com/opendocs-editor)
