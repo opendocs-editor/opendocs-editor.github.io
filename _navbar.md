@@ -1,3 +1,0 @@
--   [Website](https://docs.nosadnile.net/)
--   [Documentation](https://opendocs-editor.github.io/)
--   [GitHub](https://github.com/opendocs-editor)
